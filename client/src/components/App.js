@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import useStorage from '../hooks/useStorage';
 import Login from './Login';
 
 function App() {
-  const [id, setId] = useState();
+  const [id, setId] = useStorage('id');
   console.log(id);
   return (
     <div>
