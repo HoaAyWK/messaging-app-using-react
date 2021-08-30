@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import { Container, Form, Button } from 'react-bootstrap';
 import { v4 as uuidV4 } from 'uuid';
 
 function Login({ onIdSubmit }) {
@@ -15,12 +15,12 @@ function Login({ onIdSubmit }) {
     return (
         <Container className='d-flex align-items-center' style={{height: '100vh'}}>
             <Form className='w-100' onSubmit={handleSubmit}>
-                <FormGroup className='my-2'>
-                    <Label for='id'>Enter Your Id</Label>
-                    <Input id='id' type='text' innerRef={idRef} required />
-                </FormGroup>
-                <Button color='primary' type='submit'style={{marginRight: '5px'}}>Login</Button>
-                <Button onClick={createNewId} type='submit'>Create new id</Button>
+                <Form.Group className='mb-2'>
+                    <Form.Label>Enter Your Id</Form.Label>
+                    <Form.Control type='text' ref={idRef} required />
+                </Form.Group>
+                <Button type='submit' className='me-2'>Login</Button>
+                <Button variant='secondary' onClick={createNewId}>Create new id</Button>
             </Form>
         </Container>
     );
